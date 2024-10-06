@@ -7,6 +7,11 @@ const TaskSchema = new mongoose.Schema(
     assignedTo: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     status: { type: String, default: "Pending" },
     dueDate: Date,
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    }, // The user who created the task
   },
   { timestamps: true }
 );
